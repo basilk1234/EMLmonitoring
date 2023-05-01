@@ -1,0 +1,27 @@
+<!-- templates/index.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Emergency Lighting System Monitoring</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Battery Level</th>
+            <th>Last Reported</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for emergency_light in emergency_lights %}
+        <tr>
+            <td>{{ emergency_light.name }}</td>
+            <td>{{ emergency_light.location }}</td>
+            <td>{{ emergency_light.battery_level }}%</td>
+            <td>{{ emergency_light.last_reported }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
